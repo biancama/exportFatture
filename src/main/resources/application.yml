@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username : adempiere
+    password: adempiere
+    url: jdbc:postgresql://localhost:5432/adempiere
+    driver-class-name: org.postgresql.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: salumificio.meoni@gmail.com
+    password: XXXXXXX
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          ssl:
+            enable: false
+          starttls:
+            enable: true
+#meoni:
+#  mail:
+#    to:
+#      - massimo.biancalani@gmail.com
+#    cc:
+#      - salumificio.meoni@gmail.com

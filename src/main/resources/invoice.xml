@@ -1,0 +1,43 @@
+<beanio xmlns="http://www.beanio.org/2012/03"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+    <stream name="invoice" format="fixedlength">
+        <record name="header" class="com.biancama.meoni.domain.Invoice">
+
+            <field name="ditta" length="5" />
+            <field name="versione" length="1" />
+            <field name="tarc" length="1" />
+            <field name="codCliFor" length="5" />
+            <field name="raso" length="32" align="right" />
+            <field name="ind" length="30" align="right" />
+            <field name="cap" length="5" align="right" />
+            <field name="citta" length="25" align="right" />
+            <field name="prov" length="2" align="right" />
+            <field name="cofi" length="16" align="right" />
+            <field name="piva" length="11" align="right" />
+            <field name="pf" length="1" align="right" />
+            <field name="filler" ignore="true" length="133" padding=" " default="" />
+            <field name="causale" length="3" align="right" />
+            <field name="cauDes" length="15" align="right" />
+            <field name="filler" ignore="true" length="86" padding=" " default="" />
+            <field name="dataRegistrazione" type="date" format="ddMMyyyy" length="8" />
+            <field name="dataDoc" type="date" format="ddMMyyyy" length="8" />
+            <field name="filler" ignore="true" length="8" padding=" " default="" />
+            <field name="ndoc" length="5" align="right" />
+            <field name="filler" ignore="true" length="74" padding=" " default="" />
+
+            <segment name="ivas" class="com.biancama.meoni.domain.Iva" collection="array" minOccurs="0" maxOccurs="unbounded">
+                <field name="imponib" length="12" align="right" />
+                <field name="aliq" length="3" align="right" />
+                <field name="filler" ignore="true" length="5" padding=" " default="" />
+                <field name="imposta" length="11" align="right" />
+            </segment>
+            <field name="totFatt" length="12" align="right" />
+            <field name="filler" ignore="true" length="6265" padding=" " default="" />
+
+        </record>
+
+
+    </stream>
+</beanio>
