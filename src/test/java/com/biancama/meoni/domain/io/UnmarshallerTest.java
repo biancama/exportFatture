@@ -39,7 +39,9 @@ public class UnmarshallerTest {
 				.dataRegistrazione(Date.from(LocalDateTime.of(2007, Month.JANUARY, 8, 23, 11).atZone(ZoneId.systemDefault()).toInstant()))
 				.dataDoc(Date.from(LocalDateTime.of(2007, Month.JANUARY, 8, 23, 11).atZone(ZoneId.systemDefault()).toInstant()))
 				.ndoc("301")
-				.totFatt("50127").build();
+				.totFatt("50127")
+				.impRic("50127")
+				.build();
 				invoice.getIvas()[0] = iva;
 		Resource resource = new ClassPathResource("invoice01.dat");
 		String fileContentExcepted = new String(Files.readAllBytes(Paths.get(resource.getURI())), StandardCharsets.UTF_8);
@@ -75,7 +77,9 @@ public class UnmarshallerTest {
 			.dataRegistrazione(Date.from(LocalDateTime.of(2007, Month.JANUARY, 8, 23, 11).atZone(ZoneId.systemDefault()).toInstant()))
 			.dataDoc(Date.from(LocalDateTime.of(2007, Month.JANUARY, 8, 23, 11).atZone(ZoneId.systemDefault()).toInstant()))
 			.ndoc("103")
-			.totFatt("38876").build();
+			.totFatt("38846")
+			.impRic("38846")
+			.build();
 		invoice.getIvas()[0] = iva01;
 		invoice.getIvas()[1] = iva02;
 

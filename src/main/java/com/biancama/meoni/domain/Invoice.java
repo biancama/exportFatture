@@ -69,6 +69,12 @@ public class Invoice {
 	//Conti di ricavo/costo
 	private String contoRic;
 	private String impRic;
+	private String codPag;
+	private String totRate;
+	private String numRata;
+	private String tipoEff;
+	private String porFlag;
+	private String riservatoB;
 
 	public static class InvoiceBuilder {
 		private Iva[] ivas = new Iva[8];
@@ -79,7 +85,12 @@ public class Invoice {
 		private String codCliFor="00000";
 		private String causale= "001";
 		private String cauDes="Fatt.di vendita";
-
-
+		private String contoRic = "5805010";
+		private String codPag = "4";
+		private String totRate = "1";
+		private String numRata = "1";
+		private String tipoEff = "3";
+		private String porFlag = "0";
+		private String riservatoB = "S";
 	}
 }

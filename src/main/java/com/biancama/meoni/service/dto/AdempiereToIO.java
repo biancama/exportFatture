@@ -54,7 +54,9 @@ public class AdempiereToIO {
 			.dataRegistrazione(cInvoice.getDocDate())
 			.dataDoc(cInvoice.getDocDate())
 			.ndoc(cInvoice.getDocNumber())
-			.totFatt(cInvoice.getTotalCents().setScale(0).toString()).build();
+			.totFatt(cInvoice.getTotalCents().setScale(0).toString())
+			.impRic(cInvoice.getTotalCents().setScale(0).toString())
+			.build();
 		int index = 0;
 		for (CInvoiceTax cInvoiceTax : cInvoiceTaxes) {
 			Iva iva = Iva.builder()

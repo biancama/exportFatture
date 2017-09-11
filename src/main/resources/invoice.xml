@@ -34,7 +34,22 @@
                 <field name="imposta" length="11" align="right" />
             </segment>
             <field name="totFatt" length="12" align="right" />
-            <field name="filler" ignore="true" length="6265" padding=" " default="" />
+            <field name="contoRic" length="7" align="right" />
+            <field name="impRic" length="12" align="right" />
+            <field name="filler" ignore="true" length="1585" padding=" " default="" />
+            <field name="codPag" length="2" align="right" />
+            <field name="filler" ignore="true" length="40" padding=" " default="" />
+            <field name="totRate" length="2" align="right" />
+            <field name="totFatt" length="12" align="right" />
+            <field name="numRata" length="2" align="right" />
+            <field name="dataDoc" type="date" format="ddMMyyyy" length="8" />
+            <field name="tipoEff" length="1" align="right" />
+            <field name="totFatt" length="12" align="right" />
+            <field name="filler" ignore="true" length="42" padding=" " default="" />
+            <field name="porFlag" length="1" align="right" />
+            <field name="filler" ignore="true" length="4535" padding=" " default="" />
+            <field name="riservatoB" length="1" align="right" />
+            <field name="filler" ignore="true" length="3" padding=" " default="" />
 
         </record>
 
