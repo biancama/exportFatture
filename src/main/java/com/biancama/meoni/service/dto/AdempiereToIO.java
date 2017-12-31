@@ -5,9 +5,12 @@ import com.biancama.meoni.domain.Iva;
 import com.biancama.meoni.domain.adempiere.CBPartner;
 import com.biancama.meoni.domain.adempiere.CInvoice;
 import com.biancama.meoni.domain.adempiere.CInvoiceTax;
+import com.biancama.meoni.domain.adempiere.DocBaseType;
 import com.biancama.meoni.domain.adempiere.repository.CBPartnerRepository;
 import com.biancama.meoni.domain.adempiere.repository.CInvoiceRepository;
 import com.biancama.meoni.domain.adempiere.repository.CInvoiceTaxRepository;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +59,8 @@ public class AdempiereToIO {
 			.ndoc(cInvoice.getDocNumber())
 			.totFatt(cInvoice.getTotalCents().setScale(0).toString())
 			.impRic(cInvoice.getTotalCents().setScale(0).toString())
+			.causale(getCausale(cInvoice.getDocBaseType()).getLeft())
+			.cauDes(getCausale(cInvoice.getDocBaseType()).getRight())
 			.build();
 		int index = 0;
 		for (CInvoiceTax cInvoiceTax : cInvoiceTaxes) {
@@ -69,7 +74,20 @@ public class AdempiereToIO {
 		return invoice;
 	}
 
+	private Pair<String, String> getCausale(DocBaseType docBaseType) {
+		switch (docBaseType) {
+			case ARC:
+				return ImmutablePair.of("002", "Nota di Credito");
+			case ARI:
+				return ImmutablePair.of("001", "Fatt.di Vendita");
+			default:
+				return ImmutablePair.of("000", "");
+		}
+	}
+
 	private List<Long> fetchAllInvoiceId(String from, String to) {
 		return cInvoiceRepository.findByDate(from, to);
 	}
+
+
 }

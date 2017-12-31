@@ -19,5 +19,6 @@ public class CInvoice {
     private String docNumber;
     private Date docDate;
     private BigDecimal totalCents;
+    private DocBaseType docBaseType;
 
 }

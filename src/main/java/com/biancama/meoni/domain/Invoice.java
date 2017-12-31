@@ -83,8 +83,6 @@ public class Invoice {
 		private String versione = "3";
 
 		private String codCliFor="00000";
-		private String causale= "001";
-		private String cauDes="Fatt.di vendita";
 		private String contoRic = "5805010";
 		private String codPag = "4";
 		private String totRate = "1";

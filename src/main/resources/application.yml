@@ -21,9 +21,9 @@ spring:
             enable: false
           starttls:
             enable: true
-#meoni:
-#  mail:
-#    to:
-#      - massimo.biancalani@gmail.com
-#    cc:
-#      - salumificio.meoni@gmail.com
+meoni:
+  mail:
+    to:
+      - massimo.biancalani@gmail.com
+    cc:
+      - salumificio.meoni@gmail.com

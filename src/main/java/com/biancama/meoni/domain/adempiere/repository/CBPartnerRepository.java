@@ -10,16 +10,15 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CBPartnerRepository {
-    private final static String BP_QUERY = "SELECT bp.c_bpartner_id, bp.name, bp.fiscalid, bp.taxid, loc.address1, loc.postal, loc.city, loc.postal_add\n" +
-        "FROM c_bpartner bp\n" +
-        "  INNER JOIN c_bpartner_location bploc ON (bp.c_bpartner_id = bploc.c_bpartner_id)\n" +
-        "  INNER JOIN c_location loc ON (loc.c_location_id = bploc.c_location_id)\n" +
-        "WHERE bp.c_bpartner_id = ?\n" +
-        "      AND bploc.isactive = 'Y'\n" +
-        "      AND loc.isactive = 'Y'\n" +
-        "      AND bploc.isbillto = 'Y'\n" +
-        "      AND bp.ad_client_id = 1000000\n" +
-        "      AND bp.ad_org_id = 1000000\n" +
+    private final static String BP_QUERY = "SELECT bp.c_bpartner_id, bp.name, bp.fiscalid, bp.taxid, loc.address1, loc.postal, loc.city, loc.postal_add " +
+        "FROM c_bpartner bp " +
+        "  INNER JOIN c_bpartner_location bploc ON (bp.c_bpartner_id = bploc.c_bpartner_id) " +
+        "  INNER JOIN c_location loc ON (loc.c_location_id = bploc.c_location_id) " +
+        "WHERE bp.c_bpartner_id = ? " +
+        "      AND bploc.isactive = 'Y' " +
+        "      AND loc.isactive = 'Y' " +
+        "      AND bploc.isbillto = 'Y' " +
+        "      AND bp.ad_client_id = 1000000 " +
         "LIMIT 1";
 
     private final JdbcTemplate jdbc;
