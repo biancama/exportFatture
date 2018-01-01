@@ -41,6 +41,8 @@ public class UnmarshallerTest {
 				.ndoc("301")
 				.totFatt("50127")
 				.impRic("50127")
+				.causale("001")
+				.cauDes("Fatt.di vendita")
 				.build();
 				invoice.getIvas()[0] = iva;
 		Resource resource = new ClassPathResource("invoice01.dat");
@@ -79,6 +81,8 @@ public class UnmarshallerTest {
 			.ndoc("103")
 			.totFatt("38846")
 			.impRic("38846")
+			.causale("001")
+			.cauDes("Fatt.di vendita")
 			.build();
 		invoice.getIvas()[0] = iva01;
 		invoice.getIvas()[1] = iva02;
